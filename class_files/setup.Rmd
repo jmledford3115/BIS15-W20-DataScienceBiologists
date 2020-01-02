@@ -1,0 +1,34 @@
+---
+title: "Setup Instructions"
+author: "Joel Ledford"
+date: "Winter 2020"
+output:
+  html_document:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Setup your own computer
+We are fortunate to have access to a set of nice lab computers with R and RStudio pre-installed. There are advantages to having your own system, but with so many operating systems it is hard for me to troubleshoot for everyone. If you can get your computer up and running quickly, then please feel free to use your own system. If you encounter problems, it will be easier for you and me if you use the lab computer.  
+
+In order to get set-up, you need three things:  
+
++ [R](https://www.r-project.org/)  
++ [RStudio](https://www.rstudio.com/)  
++ [GitHub Desktop](https://desktop.github.com/)
+
+### 1. Download the most recent version of R and install
+R is open source and constantly changing. Make regular version checks part of your routine. R will run on a variety of platforms, but there are slight differences between mac and pc versions.  
+
+Download the latest version of R [here](https://www.r-project.org/) and install.
+
+### 2. Download the most recent version of RStudio and install
+RStudio is a GUI that allows for more intuitive management of R and includes numerous additional functions. All of our work will be done in RStudio, including uploads to Git.
+
+Download the latest version of RStudio [here](https://www.rstudio.com/) and install.  
+
+### 3. Download the most recent version of GitHub Desktop and install
+GitHub is the website where we will upload all of our work, including homework and class files. GitHub Desktop is a [GUI](https://www.computerhope.com/jargon/g/gui.htm) interface that allows us to keep track of changes (version control) and upload.  
+
+-->[Home](https://jmledford3115.github.io/datascibiol/)  
