@@ -2,7 +2,9 @@
 title: "Dummy Push"
 author: "Rebecca"
 date: "1/10/2020"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r setup, include=FALSE}
@@ -12,8 +14,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Install Packages
 ```{r}
 options(repos = c(CRAN = "http://cran.rstudio.com"))
-#install.packages("tidyverse")
-#install.packages("nycflights13")
+install.packages("tidyverse")
+install.packages("nycflights13")
 ```
 
 ## Working directory
