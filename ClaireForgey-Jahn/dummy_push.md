@@ -1,6 +1,6 @@
 ---
 title: "Dummy Push"
-author: "Kyle Tran"
+author: "Claire Forgey-Jahn"
 date: "1/10/2020"
 output: 
   html_document: 
@@ -24,7 +24,7 @@ getwd()
 ```
 
 ```
-## [1] "/Users/airtrain/Documents/BIS15-W20-DataScienceBiologists/Kyle_Tran"
+## [1] "/Users/ceforgey/Documents/GitHub/BIS15-W20-DataScienceBiologists/ClaireForgey-Jahn"
 ```
 
 ## Session Info

@@ -1,6 +1,6 @@
 ---
 title: "Dummy Push"
-author: "Leann Le"
+author: "Nicole Serrano"
 date: "1/10/2020"
 output: 
   html_document: 
@@ -54,4 +54,3 @@ flights %>%
   ggplot(aes(x=carrier))+
   geom_bar()
 ```
-

@@ -1,6 +1,6 @@
 ---
 title: "Dummy Push"
-author: "Joel Ledford"
+author: "Kaitlyn Page"
 date: "1/10/2020"
 output: 
   html_document: 

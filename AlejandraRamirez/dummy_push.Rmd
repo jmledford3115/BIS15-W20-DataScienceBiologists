@@ -1,6 +1,6 @@
 ---
 title: "Dummy Push"
-author: "Savita"
+author: "Alejandra Ramirez"
 date: "1/10/2020"
 output: 
   html_document: 
@@ -14,8 +14,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Install Packages
 ```{r}
 options(repos = c(CRAN = "http://cran.rstudio.com"))
-install.packages("tidyverse")
-install.packages("nycflights13")
+#install.packages("tidyverse")
+#install.packages("nycflights13")
 ```
 
 ## Working directory

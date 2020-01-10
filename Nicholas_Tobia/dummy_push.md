@@ -1,6 +1,6 @@
 ---
 title: "Dummy Push"
-author: "Savita"
+author: "Nicholas Tobia"
 date: "1/10/2020"
 output: 
   html_document: 
@@ -13,33 +13,8 @@ output:
 
 ```r
 options(repos = c(CRAN = "http://cran.rstudio.com"))
-install.packages("tidyverse")
-```
-
-```
-## Installing package into '/Users/scsastry/Library/R/3.6/library'
-## (as 'lib' is unspecified)
-```
-
-```
-## 
-## The downloaded binary packages are in
-## 	/var/folders/zz/zyxvpxvq6csfxvn_n002t02c00ph0l/T//RtmpxyAoew/downloaded_packages
-```
-
-```r
-install.packages("nycflights13")
-```
-
-```
-## Installing package into '/Users/scsastry/Library/R/3.6/library'
-## (as 'lib' is unspecified)
-```
-
-```
-## 
-## The downloaded binary packages are in
-## 	/var/folders/zz/zyxvpxvq6csfxvn_n002t02c00ph0l/T//RtmpxyAoew/downloaded_packages
+#install.packages("tidyverse")
+#install.packages("nycflights13")
 ```
 
 ## Working directory
@@ -49,7 +24,7 @@ getwd()
 ```
 
 ```
-## [1] "/Users/scsastry/Documents/GitHub/BIS15-W20-DataScienceBiologists/savita_sastry"
+## [1] "/Users/ntobia/Desktop/BIS15-W20-DataScienceBiologists/Nicholas_Tobia"
 ```
 
 ## Session Info

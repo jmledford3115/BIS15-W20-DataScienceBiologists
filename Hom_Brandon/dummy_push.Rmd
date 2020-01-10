@@ -1,8 +1,10 @@
 ---
 title: "Dummy Push"
-author: "Vincent Castillo"
+author: "Brandon Hom"
 date: "1/10/2020"
-output: html_document
+output: 
+  html_document: 
+    keep_md: yes
 ---
 
 ```{r setup, include=FALSE}
