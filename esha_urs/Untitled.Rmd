@@ -1,0 +1,21 @@
+---
+title: "practice_RMarkdown"
+author: "Esha Urs"
+date: "1/10/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#load the library
+```{r}
+library("tidyverse")
+```
+
+
+```{r}
+ggplot(mtcars, aes(x = factor(cyl))) +
+    geom_bar()
+```
+

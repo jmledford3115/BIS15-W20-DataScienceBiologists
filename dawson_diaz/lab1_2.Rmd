@@ -42,8 +42,7 @@ I *love* RMarkdown. Spend some time learning to effectively use it for notes and
 RMarkdown is one of many types of documents that can be created in RStudio. It is an extremely helpful way to build code because it will display the code, its output, and any text that you wish to add.  
 
 1. In RStudio, open a new markdown document: **File>New File>R Markdown**  
-2. There is some generic information at the start of the file that we don't need. Delete lines 12 through 31 to clean things up. 
-3. Insert a new R code chunk by clicking on the green `insert` tab and selecting R. 
+2. There is some generic information at the start of the file that we don't need. Delete lines 12 through 31 to clean things up. 3. Insert a new R code chunk by clicking on the green `insert` tab and selecting R. 
 4. Copy and paste the following into the new code chunk.  
 
 ```{r}
