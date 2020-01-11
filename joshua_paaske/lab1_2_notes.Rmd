@@ -42,8 +42,7 @@ I *love* RMarkdown. Spend some time learning to effectively use it for notes and
 RMarkdown is one of many types of documents that can be created in RStudio. It is an extremely helpful way to build code because it will display the code, its output, and any text that you wish to add.  
 
 1. In RStudio, open a new markdown document: **File>New File>R Markdown**  
-2. There is some generic information at the start of the file that we don't need. Delete lines 12 through 31 to clean things up. 
-3. Insert a new R code chunk by clicking on the green `insert` tab and selecting R. 
+2. There is some generic information at the start of the file that we don't need. Delete lines 12 through 31 to clean things up. 3. Insert a new R code chunk by clicking on the green `insert` tab and selecting R. 
 4. Copy and paste the following into the new code chunk.  
 
 ```{r}
@@ -93,9 +92,6 @@ Assign a value to object 'x'. The '<-' symbol is read as 'gets'. In this case, x
 ```{r}
 x <- 42
 ```
-```{r}
-
-```
 
 To print the object to the screen, just type x. Alternatively, you can use the print command.
 ```{r}
@@ -111,17 +107,6 @@ control <- 38
 
 ## Practice
 1. Make a new object `my_experiment` that is the sum of the treatment and control.  
-```{r}
-my_experiment <- treatment + control
-
-my_experiment
-```
-
-
-```{r}
-my_experiment <- treatment + control
-```
-
 
 ## Nomenclature
 We need to be careful about nomenclature when we write code. R allows us to give almost any name we want to an object, but there are exceptions. For example, we don't want to give a name to an object that is the same as a function in R.
@@ -134,40 +119,10 @@ We get an error here because `else` is a function in R. You also don't want to g
 
 ## Practice
 1. Create three new objects, `venom_GT`, `chiron`, and `veyron`. These are the fastest cars in the world. Assign each car to its top speed. The venom_GT can go 270, chiron is 261, and veyron is 268.
-```{r}
-venom_GT <- 270
-chiron <- 261
-veyron <- 268
-```
-
-```{r}
-venom_GT <- 270
-chiron <-  261
-veyron <- 268
-```
-
 
 2. Use arithmetic to calculate the mean top speed for the cars.
-```{r}
-speed <- (270+261+268)
-```
-```{r}
-speed/3
-```
-
-```{r}
-speed <- (venom_GT + chiron + veyron)/3
-```
-
 
 3. Use the function `mean()` to calculate the mean top speed for the cars.
-```{r}
-mean(venom_GT, chiron, veyron)
-```
-
-```{r}
-mean(venom_GT, chiron, veyron)
-```
 
 ## Types of Data
 There are five frequently used `classes` of data: 1. numeric, 2. integer, 3. character, 4. logical, 5. complex.
