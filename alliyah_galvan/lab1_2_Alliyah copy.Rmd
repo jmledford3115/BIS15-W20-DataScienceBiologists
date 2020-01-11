@@ -42,8 +42,7 @@ I *love* RMarkdown. Spend some time learning to effectively use it for notes and
 RMarkdown is one of many types of documents that can be created in RStudio. It is an extremely helpful way to build code because it will display the code, its output, and any text that you wish to add.  
 
 1. In RStudio, open a new markdown document: **File>New File>R Markdown**  
-2. There is some generic information at the start of the file that we don't need. Delete lines 12 through 31 to clean things up. 
-3. Insert a new R code chunk by clicking on the green `insert` tab and selecting R. 
+2. There is some generic information at the start of the file that we don't need. Delete lines 12 through 31 to clean things up. 3. Insert a new R code chunk by clicking on the green `insert` tab and selecting R. 
 4. Copy and paste the following into the new code chunk.  
 
 ```{r}
@@ -93,9 +92,6 @@ Assign a value to object 'x'. The '<-' symbol is read as 'gets'. In this case, x
 ```{r}
 x <- 42
 ```
-```{r}
-
-```
 
 To print the object to the screen, just type x. Alternatively, you can use the print command.
 ```{r}
@@ -109,12 +105,15 @@ treatment <- 36
 control <- 38
 ```
 
+q <- 10
+
 ## Practice
 1. Make a new object `my_experiment` that is the sum of the treatment and control.  
 ```{r}
-my_experiment <- treatment + control
-
+my_experiment <- treatment+control
 my_experiment
+print(my_experiment)
+
 ```
 
 
@@ -137,15 +136,15 @@ veyron <- 268
 
 2. Use arithmetic to calculate the mean top speed for the cars.
 ```{r}
-speed <- (270+261+268)
-```
-```{r}
-speed/3
+speed <- 270 + 261 + 268
 ```
 
 3. Use the function `mean()` to calculate the mean top speed for the cars.
 ```{r}
-mean(venom_GT, chiron, veyron)
+speed /3
+```
+```{r}
+mean (270, 261, 268)
 ```
 
 ## Types of Data
