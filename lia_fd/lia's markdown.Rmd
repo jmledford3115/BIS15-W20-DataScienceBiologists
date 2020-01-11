@@ -1,0 +1,24 @@
+---
+title: "lia markdown"
+author: "lia_fd"
+date: "1/10/2020"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Load library
+```{r}
+library("tidyverse")
+```
+
+
+```{r}
+ggplot(mtcars, aes(x = factor(cyl))) +
+    geom_bar()
+```
+
