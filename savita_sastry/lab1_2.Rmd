@@ -19,12 +19,12 @@ One strength of R is that there are thousands of add-on packages that perform sp
 
 In this class, we will routinely use the library called the **tidyverse**. Libraries need to be installed in order to work, and whenever you update R you also need to update all of the packages that you use. In class, the tidyverse is pre-installed but at home you will need to install the package.  
 ```{r}
-#install.packages("tidyverse")
+install.packages("tidyverse")
 ```
 
 Here is another clever option.  
 ```{r}
-#if (!require('tidyverse')) install.packages('tidyverse'); library('tidyverse')
+if (!require('tidyverse')) install.packages('tidyverse'); library('tidyverse')
 ```
 
 ## Call the library
@@ -93,6 +93,17 @@ Assign a value to object 'x'. The '<-' symbol is read as 'gets'. In this case, x
 x <- 42
 ```
 
+```{r}
+q <- 10
+```
+
+
+```{r}
+q+x
+```
+
+#create new cochunk with option+command+i
+
 To print the object to the screen, just type x. Alternatively, you can use the print command.
 ```{r}
 x
@@ -105,17 +116,8 @@ treatment <- 36
 control <- 38
 ```
 
-q <- 10
-
 ## Practice
 1. Make a new object `my_experiment` that is the sum of the treatment and control.  
-```{r}
-my_experiment <- treatment+control
-my_experiment
-print(my_experiment)
-
-```
-
 
 ## Nomenclature
 We need to be careful about nomenclature when we write code. R allows us to give almost any name we want to an object, but there are exceptions. For example, we don't want to give a name to an object that is the same as a function in R.
@@ -128,24 +130,10 @@ We get an error here because `else` is a function in R. You also don't want to g
 
 ## Practice
 1. Create three new objects, `venom_GT`, `chiron`, and `veyron`. These are the fastest cars in the world. Assign each car to its top speed. The venom_GT can go 270, chiron is 261, and veyron is 268.
-```{r}
-venom_GT <- 270
-chiron <- 261
-veyron <- 268
-```
 
 2. Use arithmetic to calculate the mean top speed for the cars.
-```{r}
-speed <- 270 + 261 + 268
-```
 
 3. Use the function `mean()` to calculate the mean top speed for the cars.
-```{r}
-speed /3
-```
-```{r}
-mean (270, 261, 268)
-```
 
 ## Types of Data
 There are five frequently used `classes` of data: 1. numeric, 2. integer, 3. character, 4. logical, 5. complex.
