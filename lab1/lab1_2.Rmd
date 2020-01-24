@@ -1,0 +1,163 @@
+---
+title: "RMarkdown and Data Types"
+output:
+  html_document:
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+## Learning Goals  
+*At the end of this exercise, you will be able to:*    
+1. Use RMarkdown to "knit" an hrml file.  
+2. Define an object in R; assign values to objects.  
+3. Learn best practices in the naming of objects and other R programming conventions.  
+4. Learn the differences between the types of data used in R.  
+5. Perform simple operations using vectors.  
+
+## RMarkdown
+Annotation of code is important for programmers of all levels. When code is annotated, it is easy for others to understand and perhaps more importantly, easier for the person who wrote the code to understand when returning to a project days to years later. RMarkdown allows us to embed code in annotated chunks, show the results of analyses, and display graphical output all in one file.  
+
+The RMarkdown file can then be exported in a number of formats. If you have questions, the definitive guide to RMarkdown is [here](https://bookdown.org/yihui/rmarkdown/).  
+
+Here is a great [tutorial on RMarkdown](https://www.markdowntutorial.com/).  
+
+## RMarkdown Basics
+RMarkdown is one of many types of documents that can be created in RStudio and is the one we will use most frequently in BIS 15L.  
+
+1. In RStudio, open a new markdown document: **File>New File>R Markdown** and title it "RMarkdown Practice".  
+2. At the top of the page, the hear includes information about the title, author, date, and output. You can edit these fields, but avoid editing output for now.   
+3. There is some generic information at the start of the file that we don't need. Delete lines 12 through 31 to clean things up.  
+4. Hold on to this file, we will use it shortly.  
+
+## Titles and Text
+Have a look at the format of this document; titles are indicated by a `#`. Larger numbers of `#'s` reduce the size of the font. Text with no `#'s` is smallest and not bold. To emphasize words, you can use _italics_ or **bold**. A line break is indicated by two spaces.  
+
+## Links
+I often add links to my RMarkdown files. For a website, include the page name in `[]` and the website address in `()`. [BIS 15 Webpage](https://jmledford3115.github.io/datascibiol/)    
+
+Email is similar, but you need to include `mailto:` in the parentheses. Here is my email: [Joel Ledford](jmledford@ucdavis.edu)    
+
+## Code Chunks
+All R code is inserted between two gray bars called a code chunk. You can insert a new code chunk by clicking "Insert>R" at the top of the page. On a Mac, the shortcut is `option+command+i`.  
+
+## Knit
+In order to make the html file, you need to "Knit" the file. Knitting just means build the file. If you click "Knit" now, it will knit the lab.  
+
+## Practice
+1. Go back to your "RMarkdown Practice" file and experiment with titles, text, and syntax.  
+2. Copy and paste the following two pieces of code into the document (include the gray code "chunks").      
+
+```{r message=FALSE, warning=FALSE}
+library("tidyverse")
+```
+
+```{r}
+ggplot(mtcars, aes(x = factor(cyl))) +
+    geom_bar()
+```
+
+5. Now `knit` the file to html using the knit button at the top of the page.  
+6. Lastly, commit and push this file to your GitHub repository.  
+
+## Objects
+In order to access the potential of R we need to assign values or other types of data to `objects`. There is a specific format that I want you to follow, so please pay close attention.  
+
+Assign a value to object 'x'. The '<-' symbol is read as 'gets'. In this case, x gets 42. Make sure that you are in the environment panel and you should see the value associated with 'x'. On a mac, you can push `option` and `-` to automatically generate the gets symbol.
+```{r}
+x <- 42
+```
+
+To print the object to the screen, just type x.
+```{r}
+x
+```
+
+Once an object has been created, you can do things with them.
+```{r}
+treatment <- 36
+control <- 38
+```
+
+
+Here we make a new object `my_experiment` that is the sum of the treatment and control.  
+```{r}
+my_experiment <- sum(treatment, control)
+my_experiment
+```
+
+## Nomenclature
+We need to be careful about nomenclature when we write code. R allows us to give almost any name we want to an object, but there are exceptions. For example, we don't want to give a name to an object that is the same as a function in R.  
+```{r eval=FALSE, include=TRUE}
+else <- 12
+```
+
+We get an error here because `else` is a function in R. You also don't want to give names that might get confused with functions; i.e. you can assign a value to 'mean' but this could become confusing because mean is used as a function.  
+
+## Practice
+1. Create three new objects, `venom_GT`, `chiron`, and `veyron`. These are the fastest cars in the world. Assign each car to its top speed. The venom_GT can go 270, chiron is 261, and veyron is 268.
+```{r}
+venom_GT <- 270
+chiron <- 261
+veyron <- 268
+```
+
+2. Use arithmetic to calculate the mean top speed for the cars.
+```{r}
+(270+261+268)/3
+```
+
+3. Use the function `mean()` to calculate the mean top speed for the cars.
+```{r}
+car_speed_vector <- c(270,261,268)
+mean(car_speed_vector)
+```
+
+## Types of Data
+There are five frequently used `classes` of data: 1. numeric, 2. integer, 3. character, 4. logical, 5. complex.
+```{r}
+my_numeric <- 42
+my_integer <- 2L #adding an L automatically denotes an integer
+my_character <- "universe"
+my_logical <- FALSE
+my_complex <- 2+4i
+```
+
+To find out what type of data you are working with, use the `class()` function. This is important because sometimes we will need to change the type of data to perform certain analyses.
+```{r}
+class(my_numeric)
+```
+
+You can use the `is()` and `as()` functions to clarify or specify a type of data.
+```{r}
+is.integer(my_numeric) #is my_numeric an integer?
+```
+
+```{r}
+my_integer <- 
+  as.integer(my_numeric) #create a new object specified as an integer
+```
+
+```{r}
+is.integer(my_integer) #is my_numeric an integer?
+```
+
+## Missing Data
+R has a special way to designate missing data, the NA. NA values in R have specific properties which are very useful if your data contains any missing values. 
+
+NA values are used to designate missing data. `is.na` or `anyNA` are useful functions when dealing with NAs in data. 
+```{r}
+my_missing <- NA
+```
+
+```{r}
+is.na(my_missing)
+```
+
+```{r}
+anyNA(my_missing)
+```
+
+## Wrap-up
+Please review the learning goals and be sure to use the code here as a reference when completing the homework.  
+-->[Home](https://jmledford3115.github.io/datascibiol/)
