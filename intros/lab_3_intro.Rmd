@@ -19,6 +19,11 @@ library("jpeg")
 6. Copy the files for today's lab from the class repository and paste them into **your** repository.  
 7. Open today's lab in RStudio.  
 
+## Updates
+- Make sure you have the latest version of R installed.  
+- Make sure you have the latest version of RStudio installed.  
+- Updates to R or RStudio require re-installation of packages.  
+
 ## Homework
 - Take 5 minutes or so to double check that your homework is complete and uploaded.
 - Suggestion: have a lab partner have a look at your repository on github.com. 
