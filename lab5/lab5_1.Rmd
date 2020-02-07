@@ -19,8 +19,8 @@ In the last section we practiced wrangling untidy data using `tidyr`. We also le
 
 ## Install `naniar` and `skimr`
 ```{r}
-#install.packages("naniar")
-#install.packages("skimr")
+install.packages("naniar")
+install.packages("skimr")
 ```
 
 ## Load the libraries
@@ -66,6 +66,10 @@ OK, what are we supposed to do with that? Unless you have a small data frame, ap
 msleep %>% 
   summarize(number_nas = sum(is.na(msleep)))
 ```
+```{r}
+glimpse(msleep)
+```
+
 
 This is better, but we still don't have any idea of where those NA's are in our data frame. If there were a systemic problem in the data it would be hard to determine. In order to do this, we need to apply `is.na()` to each variable of interest.
 ```{r}
@@ -78,15 +82,31 @@ The `summary()` function in base R will tally NAs by variable, but only for cate
 summary(msleep)
 ```
 
+```{r}
+msleep %>% 
+  summarize(number_nas = sum(is.na(brainwt)))
+```
+
+
 ## Practice
 1. Load the data `import_export.csv` and store it as a new object `import_export`.
+```{r}
+import_export <- 
+  readr::read_csv("data/import_export.csv")
+```
 
 
 2. Are there NAs in the data? Evaluate this logically (true/false).
+```{r}
+is.na(import_export)
+```
 
 
 3. How many total NAs are present?
-
+```{r}
+import_export %>% 
+  summarize(number_nas = sum(is.na(import_export)))
+```
 
 ## NAs in large datasets using `purr`
 What if we are working with hundreds or thousands (or more!) variables?! In order to deal with this problem efficiently we can use another package in the tidyverse called `purrr`.  
@@ -97,7 +117,7 @@ msleep %>%
   purrr::map_df(~ sum(is.na(.))) #map to a new data frame the sum results of the is.na function for all columns
 ```
 
-Don't forget that we can use `gather()` to make viewing this output easier.
+Don't forget that we can use `pivot_longer` to make viewing this output easier.
 ```{r}
 msleep %>% 
   purrr::map_df(~ sum(is.na(.))) %>% 
@@ -162,6 +182,9 @@ life_history %>%
 ```
 
 2. Reconsider the practice question from the beginning of the lab. Are there any NA's in the data? Does this seem likely? Do the mean values from the `skim()` output above make sense?  
+```{r}
+glimpse(life_history2)
+```
 
 
 3. Replace the entries that represent NA's in the data using `na_if()`. Double check your work and compare to #2 above.
@@ -172,7 +195,14 @@ life_history2 <-
 ```
 
 4. In which variable are the most NAs in the data frame?
-
+```{r}
+life_history2 %>% 
+  purrr::map_df(~ sum(is.na(.))) %>% 
+  pivot_longer(everything(),
+    names_to= "variables",
+    values_to = "num_nas") %>% 
+  arrange(desc(num_nas))
+```
 
 ## `naniar`
 `naniar` is a package that is built to manage NAs. Many of the functions it performs can be performed using tidyverse functions above, but it does provide some interesting options.
@@ -205,7 +235,7 @@ life_history %>%
 ## Visualizing NAs
 There is another package `visdat` that can be used to visualize the proportion of different classes of data, including missing data.
 ```{r}
-#install.packages("vidat)
+install.packages("visdat")
 library(visdat)
 ```
 
